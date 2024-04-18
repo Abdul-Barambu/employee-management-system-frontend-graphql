@@ -1,12 +1,21 @@
+import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import EmployeeQuery from './src/component/EmployeeQuery';
+
+const client = new ApolloClient({
+  uri: "http://localhost:8080/graphql",
+  cache: new InMemoryCache()
+})
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <ApolloProvider client={client}>
+      <View style={styles.container}>
+        <EmployeeQuery />
+        <StatusBar style="auto" />
+      </View>
+    </ApolloProvider>
   );
 }
 
