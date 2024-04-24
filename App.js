@@ -3,8 +3,9 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import EmployeeQuery from './src/component/EmployeeQuery';
 
+
 const client = new ApolloClient({
-  uri: "http://localhost:8080/graphql",
+  uri: "http://192.168.1.164:8080/graphql",
   cache: new InMemoryCache()
 })
 

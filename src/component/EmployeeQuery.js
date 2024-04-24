@@ -20,14 +20,15 @@ const EmployeeQuery = () => {
     const {loading, error, data} = useQuery(GET_EMPLOYEES)
 
     if(loading) return <Text>Loading . . .</Text>;
-    if(error) return <Text>Error Occurred</Text>
+    if(error) return <Text>Error Occurred: {error.message}</Text>
+
 
     console.log(data)
 
   return (
     <View>
       {data.employees.map((employee) => (
-        <View>
+        <View key={employee.id}>
             <Text>{employee.first_name}</Text>
         </View>
       ))
