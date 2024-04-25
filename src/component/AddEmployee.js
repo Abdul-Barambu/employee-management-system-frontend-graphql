@@ -24,8 +24,8 @@ const AddEmployee = () => {
       })
   }
 
-  // if (loading) return <Text>Loading...</Text>
-  // if (error) return <Text>Error Occurred...</Text>
+  if (loading) return <Text>Loading...</Text>
+  if (error) return <Text>Error Occurred...</Text>
 
   return (
     <View>
