@@ -1,19 +1,7 @@
 import { View, Text } from 'react-native'
 import React from 'react'
-import { gql, useQuery } from '@apollo/client'
-
-const GET_EMPLOYEES = gql`
-    {
-        employees{
-            id
-            employeeNumber
-            first_name
-            last_name
-            email
-            department
-        }
-    }
-`
+import {useQuery } from '@apollo/client'
+import { GET_EMPLOYEES } from '../graphql/Shema'
 
 const EmployeeQuery = () => {
 
@@ -23,7 +11,7 @@ const EmployeeQuery = () => {
     if(error) return <Text>Error Occurred: {error.message}</Text>
 
 
-    console.log(data)
+    // console.log(data)
 
   return (
     <View>
