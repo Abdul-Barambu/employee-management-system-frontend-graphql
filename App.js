@@ -3,6 +3,8 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import EmployeeQuery from './src/component/EmployeeQuery';
 import AddEmployee from './src/component/AddEmployee';
+import UpdateEmployee from './src/component/UpdateEmployee';
+import DeleteEmployee from './src/component/DeleteEmployee';
 
 
 const client = new ApolloClient({
@@ -15,7 +17,9 @@ export default function App() {
     <ApolloProvider client={client}>
       <View style={styles.container}>
         {/* <EmployeeQuery /> */}
-        <AddEmployee />
+        {/* <AddEmployee /> */}
+        {/* <UpdateEmployee /> */}
+        <DeleteEmployee />
         <StatusBar style="auto" />
       </View>
     </ApolloProvider>

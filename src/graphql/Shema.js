@@ -27,3 +27,26 @@ export const ADD_EMPLOYEE = gql`
     }
 
 `
+
+export const UPDATE_EMPLOYEE = gql`
+
+    mutation($id: Int, $employeeUpdateRecord: EmployeeUpdateInput){
+        updateEmployee(id: $id, employeeUpdateRecord: $employeeUpdateRecord){
+            id
+            employeeNumber
+            first_name
+            last_name
+            email
+            department
+        }
+    }
+
+`
+
+export const DELETE_EMPLOYEE = gql`
+
+    mutation($id: Int){
+        deleteEmployee(id: $id)
+    }
+
+`

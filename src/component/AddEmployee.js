@@ -25,17 +25,17 @@ const AddEmployee = () => {
   }
 
   if (loading) return <Text>Loading...</Text>
-  if (error) return <Text>Error Occurred...</Text>
+  if (error) return <Text>Error: {error.message}</Text>
 
   return (
     <View>
       <Text style={styles.textStyle}>ADD EMPLOYEE</Text>
       <View>
-        <TextInput style={styles.input} placeholder='Employee Number' onChangeText={(value) => setEmployeeNumber(value)} />
-        <TextInput style={styles.input} placeholder='First Name' onChangeText={(value) => setFirstName(value)} />
-        <TextInput style={styles.input} placeholder='Last Name' onChangeText={(value) => setLastName(value)} />
-        <TextInput style={styles.input} placeholder='Email' onChangeText={(value) => setEmail(value)} />
-        <TextInput style={styles.input} placeholder='Department' onChangeText={(value) => setDepartment(value)} />
+        <TextInput style={styles.input} value={employeeNumber} placeholder='Employee Number' onChangeText={(value) => setEmployeeNumber(value)} />
+        <TextInput style={styles.input} value={first_name} placeholder='First Name' onChangeText={(value) => setFirstName(value)} />
+        <TextInput style={styles.input} value={last_name} placeholder='Last Name' onChangeText={(value) => setLastName(value)} />
+        <TextInput style={styles.input} value={email} placeholder='Email' onChangeText={(value) => setEmail(value)} />
+        <TextInput style={styles.input} value={department} placeholder='Department' onChangeText={(value) => setDepartment(value)} />
       </View>
       <View style={styles.buttonView}>
         <TouchableOpacity style={styles.button} onPress={() => addEmployeeHandler()}>
